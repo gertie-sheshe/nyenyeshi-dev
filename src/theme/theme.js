@@ -13,7 +13,8 @@ const theme = {
     },
   },
   font: {
-    primary: '"Lato", sans serif',
+    // primary: '"Lato", sans serif',
+    primary: '"Merriweather", serif',
   },
 };
 

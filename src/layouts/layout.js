@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
 
 const Main = styled.main`
   height: 100vh;
-  margin-top: 200px;
+  margin-top: 177px;
   overflow: scroll;
 `;
 

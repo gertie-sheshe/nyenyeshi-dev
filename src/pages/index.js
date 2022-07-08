@@ -1,3 +1,13 @@
+import ArticlePreview from "@blog/components/ArticlePreview";
+
 export default function Home() {
-  return <div>Hello Blog</div>;
+  return (
+    <div>
+      <ArticlePreview />
+      <ArticlePreview />
+      <ArticlePreview />
+      <ArticlePreview />
+      <ArticlePreview />
+    </div>
+  );
 }

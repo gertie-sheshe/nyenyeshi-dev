@@ -13,6 +13,6 @@ export const SectionContainer = styled.div`
   }
 
   @media (min-width: ${lg}) {
-    padding: 0 200px;
+    padding: 0 350px;
   }
 `;

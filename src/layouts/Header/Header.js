@@ -10,6 +10,9 @@ function Header() {
       <Nav>
         <List>
           <ListItem>
+            <Link href="/">All</Link>
+          </ListItem>
+          <ListItem>
             <Link href="/frontend">Frontend</Link>
           </ListItem>
           <ListItem>
