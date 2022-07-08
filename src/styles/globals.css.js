@@ -8,6 +8,7 @@ body {
   margin: 0;
   font-family: ${theme.font.primary};
   font-size: 1rem;
+  background-color: ${theme.colors.background.main};
 }
 
 h1,

@@ -7,6 +7,11 @@ export const devices = {
 };
 
 const theme = {
+  colors: {
+    background: {
+      main: "#f5f5f5",
+    },
+  },
   font: {
     primary: '"Lato", sans serif',
   },
