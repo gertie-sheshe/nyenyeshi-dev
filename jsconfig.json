@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+        "@blog/*" : ["./src/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
