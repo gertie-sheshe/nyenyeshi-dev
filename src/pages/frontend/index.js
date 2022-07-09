@@ -1,13 +1,20 @@
-import ArticlePreview from "@blog/components/ArticlePreview";
+import ArticlesPreviewList from "@blog/components/ArticlesPreviewList";
+import { fetchCategoryPosts } from "@blog/utils/sanitycms";
 
-export default function Home() {
+export default function Index({ posts }) {
   return (
-    <div>
-      <ArticlePreview />
-      <ArticlePreview />
-      <ArticlePreview />
-      <ArticlePreview />
-      <ArticlePreview />
-    </div>
+    <>
+      <ArticlesPreviewList posts={posts} />
+    </>
   );
 }
+
+export const getStaticProps = async (context) => {
+  const posts = await fetchCategoryPosts("frontend");
+
+  return {
+    props: {
+      posts,
+    },
+  };
+};

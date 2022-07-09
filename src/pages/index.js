@@ -1,6 +1,5 @@
 import ArticlesPreviewList from "@blog/components/ArticlesPreviewList";
-import { sanityClient } from "sanity";
-import { groq } from "next-sanity";
+import { fetchAllPosts } from "@blog/utils/sanitycms";
 
 export default function Index({ posts }) {
   return (
@@ -11,10 +10,8 @@ export default function Index({ posts }) {
 }
 
 export const getStaticProps = async (context) => {
-  const postsQuery = groq`* [_type == "post"]`;
-  const posts = await sanityClient.fetch(postsQuery);
+  const posts = await fetchAllPosts();
 
-  console.log("SCREAMS", posts);
   return {
     props: {
       posts,

@@ -1,12 +1,12 @@
 import Article from "@blog/components/Article";
-import { fetchAllPosts, fetchCurrentPost } from "@blog/utils/sanitycms";
+import { fetchCategoryPosts, fetchCurrentPost } from "@blog/utils/sanitycms";
 
 export default function Index(props) {
   return <Article />;
 }
 
 export const getStaticPaths = async (context) => {
-  const posts = await fetchAllPosts();
+  const posts = await fetchCategoryPosts("accessibility");
 
   const paths = posts.map((post) => ({
     params: { slug: post.slug.current },
@@ -14,7 +14,7 @@ export const getStaticPaths = async (context) => {
 
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 };
 
