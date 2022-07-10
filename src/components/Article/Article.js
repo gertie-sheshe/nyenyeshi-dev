@@ -1,4 +1,7 @@
 import React from "react";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
+
 import { ArticleContainer, H2, P, Link, Pre } from "./ArticleStyles";
 import { PortableText } from "@portabletext/react";
 
@@ -27,9 +30,9 @@ function Article({ post }) {
     types: {
       code: ({ value, children }) => {
         return (
-          <Pre>
-            <code>{value.code}</code>
-          </Pre>
+          <SyntaxHighlighter language="javascript" style={docco}>
+            {value.code}
+          </SyntaxHighlighter>
         );
       },
     },
