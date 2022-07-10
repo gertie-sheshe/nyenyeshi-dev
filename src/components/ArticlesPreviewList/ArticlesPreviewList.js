@@ -16,7 +16,7 @@ function ArticlesPreviewList({ posts }) {
   const ArticlePreviewComponent = React.forwardRef(
     function ArticlePreviewComponent({ onClick, href, post }, ref) {
       return (
-        <A href={href} onClick={onClick} ref={ref}>
+        <A key={post.title} href={href} onClick={onClick} ref={ref}>
           <ArticlePreview post={post} />
         </A>
       );
