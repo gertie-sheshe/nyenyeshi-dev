@@ -5,6 +5,10 @@ const nextConfig = {
   images: {
     domains: [process.env.NEXT_PUBLIC_IMAGE_DOMAINS],
   },
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
 };
 
 module.exports = nextConfig;

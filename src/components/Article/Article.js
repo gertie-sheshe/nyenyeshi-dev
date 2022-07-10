@@ -3,7 +3,15 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { docco } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import Image from "next/image";
 
-import { ArticleContainer, H2, P, Link } from "./ArticleStyles";
+import {
+  ArticleContainer,
+  H2,
+  H3,
+  H4,
+  P,
+  Link,
+  BlockQuote,
+} from "./ArticleStyles";
 import { PortableText } from "@portabletext/react";
 
 import { sanityClient } from "sanity";
@@ -22,7 +30,10 @@ function Article({ post }) {
 
   const components = {
     block: {
+      h3: H3,
+      h4: H4,
       normal: P,
+      blockquote: BlockQuote,
     },
     marks: {
       link: ({ value, children }) => {
