@@ -14,6 +14,12 @@ export const Link = styled.a`
   text-underline-offset: 1px;
 `;
 
+export const Pre = styled.pre`
+  background-color: black;
+  color: wheat;
+  padding: 20px;
+`;
+
 export const ListItem = styled.li`
   margin: 15px 0px;
   line-height: 2;

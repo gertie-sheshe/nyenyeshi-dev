@@ -1,8 +1,11 @@
 import React from "react";
-import { ArticleContainer, H2, P, Link, ListItem } from "./ArticleStyles";
+import { ArticleContainer, H2, P, Link, Pre } from "./ArticleStyles";
 import { PortableText } from "@portabletext/react";
 
 function Article({ post }) {
+  if (!post.title || !post.body) {
+    return null;
+  }
   const { title, body } = post;
 
   const components = {
@@ -21,7 +24,15 @@ function Article({ post }) {
         );
       },
     },
-    listItem: ListItem,
+    types: {
+      code: ({ value, children }) => {
+        return (
+          <Pre>
+            <code>{value.code}</code>
+          </Pre>
+        );
+      },
+    },
   };
 
   return (
