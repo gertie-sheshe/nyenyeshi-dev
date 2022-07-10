@@ -1,12 +1,12 @@
 import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { docco } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
-import { ArticleContainer, H2, P, Link, Pre } from "./ArticleStyles";
+import { ArticleContainer, H2, P, Link } from "./ArticleStyles";
 import { PortableText } from "@portabletext/react";
 
 function Article({ post }) {
-  if (!post.title || !post.body) {
+  if (!post) {
     return null;
   }
   const { title, body } = post;
@@ -28,7 +28,7 @@ function Article({ post }) {
       },
     },
     types: {
-      code: ({ value, children }) => {
+      code: ({ value }) => {
         return (
           <SyntaxHighlighter language="javascript" style={docco}>
             {value.code}

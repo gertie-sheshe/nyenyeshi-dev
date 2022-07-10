@@ -20,7 +20,6 @@ export const getStaticPaths = async (context) => {
 
 export const getStaticProps = async ({ params }) => {
   const post = await fetchCurrentPost(params.slug);
-
   return {
     props: {
       post: post[0],
