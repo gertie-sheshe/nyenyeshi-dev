@@ -1,8 +1,8 @@
 import Article from "@blog/components/Article";
 import { fetchCategoryPosts, fetchCurrentPost } from "@blog/utils/sanitycms";
 
-export default function Index(props) {
-  return <Article />;
+export default function Index({ post }) {
+  return <Article post={post} />;
 }
 
 export const getStaticPaths = async (context) => {
@@ -23,7 +23,7 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     props: {
-      post,
+      post: post[0],
     },
     revalidate: 5,
   };
