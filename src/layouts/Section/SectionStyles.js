@@ -12,6 +12,10 @@ export const SectionContainer = styled.div`
     padding: 0 100px;
   }
 
+  @media (min-width: ${md}) and (max-width: ${lg}) {
+    padding: 0 80px;
+  }
+
   @media (min-width: ${lg}) {
     padding: 0 350px;
   }

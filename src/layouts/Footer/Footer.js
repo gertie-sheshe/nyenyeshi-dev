@@ -11,13 +11,13 @@ function Footer() {
         <Nav>
           <List>
             <ListItem>
-              <Link href="www.twitter.com">Twitter</Link>
+              <a href="https://twitter.com/">Twitter</a>
             </ListItem>
             <ListItem>
-              <Link href="www.instagram.com">Instagram</Link>
+              <Link href="https://www.instagram.com/">Instagram</Link>
             </ListItem>
             <ListItem>
-              <Link href="www.gertrudenyenyeshi.com">My Website</Link>
+              <Link href="https://www.gertrudenyenyeshi.com/">My Website</Link>
             </ListItem>
           </List>
         </Nav>
