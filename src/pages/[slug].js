@@ -11,6 +11,18 @@ export default function Index({ post }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
         <meta name="description" content={description} />
+
+        <meta name="twitter:card" content="summary" key="twcard" />
+        <meta name="twitter:creator" content="@gertiesheshe" key="twhandle" />
+
+        {/* <meta property="og:url" content={currentURL} key="ogurl" /> */}
+        <meta
+          property="og:site_name"
+          content="Gertrude Nyenyeshi's Technical Blog"
+          key="ogsitename"
+        />
+        <meta property="og:title" content={title} key="ogtitle" />
+        <meta property="og:description" content={description} key="ogdesc" />
         <title>{title}</title>
       </Head>
       <Article post={post} />
