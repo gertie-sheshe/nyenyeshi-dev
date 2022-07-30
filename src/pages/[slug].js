@@ -2,7 +2,7 @@ import Article from "@blog/components/Article";
 import Head from "next/head";
 
 import { fetchAllPosts, fetchCurrentPost } from "@blog/utils/sanitycms";
-import Thumbnail from "@blog/assets/thumbnail.png";
+import Thumbnail from "../../public/thumbnail.png";
 
 export default function Index({ post }) {
   const { title, summary: description } = post;
