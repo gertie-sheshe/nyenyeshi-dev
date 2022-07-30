@@ -2,6 +2,7 @@ import Article from "@blog/components/Article";
 import Head from "next/head";
 
 import { fetchAllPosts, fetchCurrentPost } from "@blog/utils/sanitycms";
+import Thumbnail from "@blog/assets/images/thumbnail.png";
 
 export default function Index({ post }) {
   const { title, summary: description } = post;
@@ -15,7 +16,6 @@ export default function Index({ post }) {
         <meta name="twitter:card" content="summary" key="twcard" />
         <meta name="twitter:creator" content="@gertiesheshe" key="twhandle" />
 
-        {/* <meta property="og:url" content={currentURL} key="ogurl" /> */}
         <meta
           property="og:site_name"
           content="Gertrude Nyenyeshi's Technical Blog"
@@ -23,6 +23,7 @@ export default function Index({ post }) {
         />
         <meta property="og:title" content={title} key="ogtitle" />
         <meta property="og:description" content={description} key="ogdesc" />
+        <meta property="og:image" content={Thumbnail} key="ogimage" />
         <title>{title}</title>
       </Head>
       <Article post={post} />
