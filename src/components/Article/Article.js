@@ -1,7 +1,4 @@
 import React from "react";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { docco } from "react-syntax-highlighter/dist/cjs/styles/hljs";
-import Image from "next/image";
 
 import {
   ArticleContainer,
@@ -13,6 +10,7 @@ import {
   BlockQuote,
 } from "./ArticleStyles";
 import { PortableText } from "@portabletext/react";
+import { renderLink, renderCode, renderImage } from "./portables";
 
 import { sanityClient } from "sanity";
 import imageUrlBuilder from "@sanity/image-url";
@@ -36,35 +34,11 @@ function Article({ post }) {
       blockquote: BlockQuote,
     },
     marks: {
-      link: ({ value, children }) => {
-        const target = (value?.href || "").startsWith("http")
-          ? "_blank"
-          : undefined;
-        return (
-          <Link href={value?.href} target={target}>
-            {children}
-          </Link>
-        );
-      },
+      link: renderLink,
     },
     types: {
-      code: ({ value }) => {
-        return (
-          <SyntaxHighlighter language="javascript" style={docco}>
-            {value.code}
-          </SyntaxHighlighter>
-        );
-      },
-      image: ({ value }) => {
-        return (
-          <Image
-            width={500}
-            height={500}
-            src={urlFor(value.asset._ref).url()}
-            alt=""
-          />
-        );
-      },
+      code: renderCode,
+      image: renderImage,
     },
   };
 
